@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="assets/jquery.signaturepad.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="sigPad" id="smoothed" style="width:404px;">
+        <h2>Bezier Curves (constant pen width)</h2>
+        <ul class="sigNav">
+        <li class="drawIt"><a href="#draw-it" >Draw It</a></li>
+        <li class="clearButton"><a href="#clear">Clear</a></li>
+        </ul>
+        <div class="sig sigWrapper" style="height:auto;">
+        <div class="typed"></div>
+        <canvas class="pad" width="400" height="250"></canvas>
+        <input type="hidden" name="output" class="output">
+        </div>
+        </div>
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/numeric/1.2.6/numeric.js"></script> 
+<script src="signature-pad-master/assets/bezier.js"></script> 
+<script src="signature-pad-master/jquery.signaturepad.js"></script>
+<script src="signature-pad-master/assets/json2.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('#smoothed').signaturePad({
+    drawOnly:true, 
+    bgColour:'#ffffff',
+    drawBezierCurves:true, lineTop:200,
+    // What action should be highlighted first: typeIt or drawIt
+defaultAction : 'typeIt', 
+
+// Initialize canvas for signature display only; ignore buttons and inputs
+displayOnly : false, 
+
+// Whether the to allow a typed signature or not
+drawOnly : false, 
+
+
+
+// Parts of the signature form that require Javascript (hidden by default)
+sig : '.sig', 
+
+// The TypeIt/DrawIt navigation (hidden by default)
+sigNav : '.sigNav', 
+
+// The colour fill for the background of the canvas; or transparent
+bgColour : '#ffffff', 
+
+// Colour of the drawing ink
+penColour : '#145394', 
+
+// Thickness of the pen
+penWidth : 2, 
+
+// Determines how the end points of each line are drawn (values: 'butt', 'round', 'square')
+penCap : 'round', 
+
+// Colour of the signature line
+lineColour : '#ccc', 
+
+// Thickness of the signature line
+lineWidth : 2, 
+
+// Margin on right and left of signature line
+lineMargin : 5, 
+
+
+  });
+});
+</script>
+</html>
